@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default col-lg-3">
+            <img class="media-object" src="venv/images/image.jpg" width="200">
+        </div>
+        <div class="panel panel-default col-lg-8 col-offset-1">
+            <h3>{{headline}}</h3>
+                <p>(description of the article, fist paragraph or something)
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis deleniti eius fugiat iure, odio quas! Explicabo impedit libero natus? Corporis dolore eos mollitia nulla, obcaecati quia suscipit velit voluptate!
+                </p>
+            <br>
+            <h4>Credibility: {{credibility}}</h4>
+            <div class="progress">
+                <div class="progress-bar
+                {% if credibility>70%}
+                    progress-bar-success
+                    {% elif credibility>40%}
+                    progress-bar-warning
+                    {% else %}
+                    progress-bar-danger
+                    {% endif %}" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{credibility}}%;">
+                </div>
+            </div>
+            <br>
+            <h4>Bias: {{bias}}</h4>
+            <div class="progress">
+                <div class="progress-bar
+                {% if bias>70%}
+                    progress-bar-success
+                    {% elif bias>40%}
+                    progress-bar-warning
+                    {% else %}
+                    progress-bar-danger
+                    {% endif %}" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{bias}}%;">
+                </div>
+            </div>
+            <br>
+            <h4>blank: {{blank}}</h4>
+            <div class="progress">
+                <div class="progress-bar
+                {% if blank>70%}
+                    progress-bar-success
+                    {% elif blank>40%}
+                    progress-bar-warning
+                    {% else %}
+                    progress-bar-danger
+                    {% endif %}" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{blank}}%;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        Desc
+    </div>
+</div>
+{% endblock %}
