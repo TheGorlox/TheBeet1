@@ -1,6 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
 <div class="panel panel-default">
   <div class="panel-body">
     Panel content
   </div>
-  <div class="panel-footer">Panel footer</div>
+  <table class="table">
+    <tr>
+    <th>Headline</th>
+    <th>Credibility</th>
+    <th>bias</th>
+  </tr>
+  <tr>
+    <td>
+      <a href="somewebsite.com">foxnews</a>
+    </td>
+    <td>
+      <div class="progress" style="height: 1em;">
+                <div class="progress-bar
+                {% if credibility>70%}
+                    progress-bar-success
+                    {% elif credibility>40%}
+                    progress-bar-warning
+                    {% else %}
+                    progress-bar-danger
+                    {% endif %}" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{credibility}}%;">
+                </div>
+        </div>
+    </td>
+    <td>john</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  </table>
 </div>
+{% endblock %}

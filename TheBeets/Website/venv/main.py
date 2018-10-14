@@ -13,16 +13,18 @@ def index(user=None):
 @app.route('/article')
 def article(user=None):
     #Outputs
+    classifier="hate"
     username="Username"
     headline="Headline"
     credibility=80
     bias=58
     blank=11
-    return render_template('article.html', credibility=credibility, bias=bias, blank=blank, headline=headline, user=user, username=username)
+    return render_template('article.html', classifier=classifier, credibility=credibility, bias=bias, blank=blank, headline=headline, user=user, username=username)
 
 @app.route('/<user>/history')
 def history(user=None):
-    return render_template('_history.html')
+    credibility = 80
+    return render_template('_history.html', credibility=credibility)
 
 if __name__ == "__main__":
     app.run(debug=True)
